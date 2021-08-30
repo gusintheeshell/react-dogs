@@ -1,5 +1,6 @@
+import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Home from "./Components/Home/Home";
@@ -8,17 +9,17 @@ import { UserStorage } from "./Contexts/UserContext";
 
 function App() {
   return (
-    <div className="App">
-      <Router>
+    <div>
+      <BrowserRouter>
         <UserStorage>
           <Header />
-          <Route>
+          <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login/*" component={Login} />
-          </Route>
+            <Route path="/login/*" element={<Login />} />
+          </Routes>
           <Footer />
         </UserStorage>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }

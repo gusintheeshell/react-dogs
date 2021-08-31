@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Button from "../../Forms/Button/Button";
 import Input from "../../Forms/Input/Input";
-import Error from "../../../Helper/Error";
+import Error from "../../../Helper/Error/Error";
 import useForm from "../../../Hooks/useForm";
 import { UserContext } from "../../../Contexts/UserContext";
 import { USER_POST } from "../../../Services/api";

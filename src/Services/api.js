@@ -82,3 +82,17 @@ export function PHOTOS_GET({ page, total, user }) {
     },
   };
 }
+
+export function COMMENT_POST(token, id, body) {
+  return {
+    url: `${API_URL}/api/comment/${id}`,
+    options: {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + token,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}

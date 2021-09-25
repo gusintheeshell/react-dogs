@@ -1,27 +1,30 @@
-import React, { useState } from "react";
-import useFetch from "../../../Hooks/useFetch";
-import { ReactComponent as Send } from "../../../Assets/enviar.svg";
-import { COMMENT_POST } from "../../../Services/api";
-import Error from "../../../Helper/Error/Error";
-import styles from "./PhotoCommentsForm.module.css";
+import React, { useState } from 'react';
+import useFetch from '../../../Hooks/useFetch';
+import { ReactComponent as Send } from '../../../Assets/enviar.svg';
+import { COMMENT_POST } from '../../../Services/api';
+import Error from '../../../Helper/Error/Error';
+import styles from './PhotoCommentsForm.module.css';
 
-const PhotoCommentsForm = ({ id, setComments }) => {
+const PhotoCommentsForm = ({ id, setComments, single }) => {
   const { error, request } = useFetch();
-  const [comment, setComment] = useState("");
+  const [comment, setComment] = useState('');
 
   async function handleSubmit(event) {
     event.preventDefault();
-    const token = window.localStorage.getItem("token");
+    const token = window.localStorage.getItem('token');
     const { url, options } = COMMENT_POST(token, id, { comment });
     const { response, json } = await request(url, options);
     if (response.ok) {
-      setComment("");
+      setComment('');
       setComments((comments) => [...comments, json]);
     }
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form
+      className={`${styles.form} ${single ? styles.single : ''}`}
+      onSubmit={handleSubmit}
+    >
       <textarea
         className={styles.textarea}
         id="comment"

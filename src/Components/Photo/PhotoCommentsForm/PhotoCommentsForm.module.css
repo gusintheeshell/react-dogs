@@ -1,62 +1,66 @@
 .form {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: stretch;
-    margin: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+  margin: 1rem;
+}
+
+.single.form {
+  margin: 1rem 0;
 }
 
 .textarea {
-    display: block;
-    width: 100%;
-    font-size: 1rem;
-    font-family: var(--type-first);
-    resize: none;
-    border: 1px solid #eee;
-    padding: .5rem;
-    border-radius: .2rem;
-    background: #eee;
-    transition: 0.2s;
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  font-family: var(--type-first);
+  resize: none;
+  border: 1px solid #eee;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  background: #eee;
+  transition: 0.2s;
 }
 
 .textarea:focus,
 .textarea:hover {
-    outline: none;
-    border-color: #fb1;
-    background: white;
-    box-shadow: 0 0 0 3px #fea;
+  outline: none;
+  border-color: #fb1;
+  background: white;
+  box-shadow: 0 0 0 3px #fea;
 }
 
 .send {
-    border: none;
-    cursor: pointer;
-    color: #333;
-    background: transparent;
-    font-size: 1rem;
-    padding: 0 1rem;
-    overflow: hidden;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  background: transparent;
+  font-size: 1rem;
+  padding: 0 1rem;
+  overflow: hidden;
 }
 
 .send:focus,
 .send:hover {
-    outline: none;
+  outline: none;
 }
 
 .send:focus svg path,
 .send:hover svg path {
-    fill: #fea;
-    stroke: #fb1;
+  fill: #fea;
+  stroke: #fb1;
 }
 
 .send:focus svg g,
 .send:hover svg g {
-    animation: bark 0.6s infinite;
+  animation: bark 0.6s infinite;
 }
 
 @keyframes bark {
-    to {
-        opacity: 0;
-    }
-    from {
-        opacity: 1;
-    }
+  to {
+    opacity: 0;
+  }
+  from {
+    opacity: 1;
+  }
 }

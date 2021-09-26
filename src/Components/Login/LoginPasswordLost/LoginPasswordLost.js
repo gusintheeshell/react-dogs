@@ -14,9 +14,9 @@ const LoginPasswordLost = () => {
     event.preventDefault();
     const { url, options } = PASSWORD_LOST({
       login: login.value,
-      url: window.location.href.replace('lost', 'reset'),
+      url: window.location.href.replace('forgot', 'reset'),
     });
-    const { json } = await request(url, options);
+    await request(url, options);
   }
 
   return (

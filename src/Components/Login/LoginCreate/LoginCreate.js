@@ -1,15 +1,16 @@
-import React, { useContext } from "react";
-import Button from "../../Forms/Button/Button";
-import Input from "../../Forms/Input/Input";
-import Error from "../../../Helper/Error/Error";
-import useForm from "../../../Hooks/useForm";
-import { UserContext } from "../../../Contexts/UserContext";
-import { USER_POST } from "../../../Services/api";
-import useFetch from "../../../Hooks/useFetch";
+import React, { useContext } from 'react';
+import Button from '../../Forms/Button/Button';
+import Input from '../../Forms/Input/Input';
+import Error from '../../../Helper/Error/Error';
+import useForm from '../../../Hooks/useForm';
+import { UserContext } from '../../../Contexts/UserContext';
+import { USER_POST } from '../../../Services/api';
+import useFetch from '../../../Hooks/useFetch';
+import Head from '../../../Helper/Head/Head';
 
 const LoginCreate = () => {
   const username = useForm();
-  const email = useForm("email");
+  const email = useForm('email');
   const password = useForm();
 
   const { userLogin } = useContext(UserContext);
@@ -27,6 +28,7 @@ const LoginCreate = () => {
   }
   return (
     <section className="animeLeft">
+      <Head title="Criar conta" />
       <h1 className="title">Cadastre-se</h1>
       <form onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" {...username} />

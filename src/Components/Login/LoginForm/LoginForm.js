@@ -1,12 +1,13 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import useForm from "../../../Hooks/useForm";
-import Button from "../../Forms/Button/Button";
-import Input from "../../Forms/Input/Input";
-import { UserContext } from "../../../Contexts/UserContext";
-import Error from "../../../Helper/Error/Error";
-import styles from "./LoginForm.module.css";
-import stylesButton from "../../Forms/Button/Button.module.css";
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import useForm from '../../../Hooks/useForm';
+import Button from '../../Forms/Button/Button';
+import Input from '../../Forms/Input/Input';
+import { UserContext } from '../../../Contexts/UserContext';
+import Error from '../../../Helper/Error/Error';
+import styles from './LoginForm.module.css';
+import stylesButton from '../../Forms/Button/Button.module.css';
+import Head from '../../../Helper/Head/Head';
 
 const LoginForm = () => {
   const username = useForm();
@@ -23,6 +24,7 @@ const LoginForm = () => {
 
   return (
     <section className="animeLeft">
+      <Head title="Login" />
       <h1 className="title">Login</h1>
       <form action="" onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" {...username} />

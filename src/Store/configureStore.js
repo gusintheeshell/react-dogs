@@ -3,10 +3,10 @@ import {
   configureStore,
   getDefaultMiddleware,
 } from '@reduxjs/toolkit';
+import photo from './photo';
 
-const count = () => 0;
 const middleware = [...getDefaultMiddleware()];
-const reducer = combineReducers({ count });
+const reducer = combineReducers({ photo });
 
 const store = configureStore({ reducer, middleware });
 

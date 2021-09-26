@@ -14,8 +14,7 @@ const UserStats = () => {
   useEffect(() => {
     async function getData() {
       const { url, options } = STATS_GET();
-      const { json } = await request(url, options);
-      console.log(json);
+      await request(url, options);
     }
     getData();
   }, [request]);

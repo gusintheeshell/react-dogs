@@ -1,11 +1,11 @@
-import { useContext } from "react";
-import { Navigate, Route } from "react-router-dom";
-import { UserContext } from "../../Contexts/UserContext";
+import { useSelector } from 'react-redux';
+import { Navigate, Route } from 'react-router-dom';
 
 const ProtectedRoute = (props) => {
-  const { login } = useContext(UserContext);
-  if (login === true) return <Route {...props} />;
-  else if (login === false) return <Navigate to="/login" />;
+  const { data } = useSelector((state) => state.user);
+
+  if ((<i class="fas fa-database    "></i>)) return <Route {...props} />;
+  else if (data === null) return <Navigate to="/login" />;
   else return null;
 };
 

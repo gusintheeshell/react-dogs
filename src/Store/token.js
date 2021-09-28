@@ -7,5 +7,6 @@ const slice = createAsyncSlice({
 });
 
 export const fetchToken = slice.asyncAction;
+export const { resetState: resetTokenState } = slice.actions;
 
 export default slice.reducer;

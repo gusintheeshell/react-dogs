@@ -5,12 +5,14 @@ import LoginForm from './LoginForm/LoginForm';
 import LoginCreate from './LoginCreate/LoginCreate';
 import LoginPasswordLost from './LoginPasswordLost/LoginPasswordLost';
 import LoginPasswordReset from './LoginPasswordReset/LoginPasswordReset';
+import Loading from '../../Helper/Loading/Loading';
 import NotFound from '../NotFound';
 import styles from './Login.module.css';
 
 const Login = () => {
-  const { data } = useSelector((state) => state.user);
+  const { data, loading } = useSelector((state) => state.user);
 
+  if (loading) <Loading />;
   if (data) return <Navigate to="/account" />;
   return (
     <section className={styles.login}>

@@ -8,7 +8,7 @@ import Image from '../../../Helper/Image/Image';
 import styles from './PhotoContent.module.css';
 
 const PhotoContent = ({ single }) => {
-  const user = useContext(UserContext);
+  const { user } = useSelector((state) => state);
   const { photo, comments } = useSelector((state) => state.photo.data);
 
   return (

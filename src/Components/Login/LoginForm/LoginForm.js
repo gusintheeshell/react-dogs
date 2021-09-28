@@ -22,7 +22,9 @@ const LoginForm = () => {
     event.preventDefault();
 
     if (username.validate() && password.validate()) {
-      dispatch(userLogin(username.value, password.value));
+      dispatch(
+        userLogin({ username: username.value, password: password.value })
+      );
     }
   }
 
